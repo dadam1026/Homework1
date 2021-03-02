@@ -60,8 +60,8 @@ while True:
         #   to ONLY be used for submitting orders, and close the connection when the order is successfully submitted.
 
         # your code goes here
-
-        # The new_order object returned by the call to ib_orders.placeOrder() that you've written is an object of class
+        ib = IB()
+            # The new_order object returned by the call to ib_orders.placeOrder() that you've written is an object of class
         #   `trade` that is kept continually updated by the `ib_insync` machinery. It's a market order; as such, it will
         #   be filled immediately.
         # In this while loop, we wait for confirmation that new_order filled.
@@ -70,6 +70,8 @@ while True:
                                # is not built for the normal time.sleep() function.
 
         # your code goes here
+        order = MarketOrder("BUY", share_per_order)
+        ib.placeOrder(contract, order)
 
         # pass: same reason as above.
         pass
