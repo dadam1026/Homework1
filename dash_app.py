@@ -51,7 +51,6 @@ app.layout = html.Div([
     ,
     html.Div([
         # Candlestick graph goes here:
-        candlestick_app.my_func()
         dcc.Graph(id='candlestick-graph')
     ]),
     # Another line break
