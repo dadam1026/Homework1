@@ -7,11 +7,15 @@ import pandas as pd
 from os import listdir, remove
 import pickle
 from time import sleep
+import candlestick_app
+import file_input_n_output
+
 
 from helper_functions import * # this statement imports all functions from your helper_functions file!
 
 # Run your helper function to clear out any io files left over from old runs
 # 1:
+check_for_and_del_io_files()
 
 
 # Make a Dash app!
@@ -26,7 +30,7 @@ app.layout = html.Div([
     # Currency pair text input, within its own div.
     html.Div(
         [
-            "Input Currency: ",
+            "Input Currency: CHFUSD",
             # Your text input object goes here:
 
         ],
@@ -34,13 +38,20 @@ app.layout = html.Div([
         style={'display': 'inline-block'}
     ),
     # Submit button:
+    <input type="submit">
     ,
     # Line break
     html.Br(),
     # Div to hold the initial instructions and the updated info once submit is pressed
+    app.layout = html.Div([
+    html.Div(dcc.Input(id='currency-pair', type='text')),
+    html.Button('Submit', id='submit-button', n_clicks=0),
+    html.Div(id='output-div', children='Enter a currency code and press 'submit'')
+    ])
     ,
     html.Div([
         # Candlestick graph goes here:
+        candlestick_app.my_func()
         dcc.Graph(id='candlestick-graph')
     ]),
     # Another line break
@@ -48,14 +59,26 @@ app.layout = html.Div([
     # Section title
     html.H1("Section 2: Make a Trade"),
     # Div to confirm what trade was made
-    ,
+    html.Div([
+        file_input_n_output.my_func()
+    ]),
     # Radio items to select buy or sell
+    dcc.RadioItems(
+        options=[
+            {'label': 'Buy', 'value': 'Buy'},
+            {'label': 'Sell', 'value': 'Sell'},
+        ],
+        value='Buy'
+    )
     ,
     # Text input for the currency pair to be traded
+    <input type="CHFUSD">
     ,
     # Numeric input for the trade amount
+    <input type="2000">
     ,
     # Submit button for the trade
+    <input type="Trade">
 
 
 ])

@@ -35,4 +35,4 @@ app.layout = html.Div([dcc.Graph(id='candlestick-graph', figure=fig)])
 
 # Run it!
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=True, port = 8050, host = "127.0.0.1")
