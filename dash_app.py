@@ -33,7 +33,7 @@ app.layout = html.Div([
     # Currency pair text input, within its own div.
     html.Div(
         [
-            "Input Currency: CHFUSD",
+            "Input Currency: AUDUSD",
             # Your text input object goes here:
 
         ],
