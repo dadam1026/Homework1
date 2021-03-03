@@ -10,7 +10,7 @@ def check_for_and_del_io_files():
     # Your code goes here.
     starting_path = "/Users/derrickadam/PycharmProjects/Homework1"
     dir_list = os.listdir(starting_path)
-    for file in dir_list:
+    for file in dir_list():
         if file == "currency_pair.txt":
             path = os.path.join(starting_path, file)
             os.remove(path)
